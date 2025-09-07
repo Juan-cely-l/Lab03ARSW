@@ -18,7 +18,6 @@ public class InMemoryBlueprintPersistence implements BlueprintsPersistence {
     private final Map<Tuple<String, String>, Blueprint> blueprints = new HashMap<>();
 
     public InMemoryBlueprintPersistence() {
-        // Initialize with some sample data
         Point[] pts = new Point[]{new Point(0, 0), new Point(10, 10)};
         Blueprint bp1 = new Blueprint("john", "house", pts);
         Blueprint bp2 = new Blueprint("john", "office", pts);

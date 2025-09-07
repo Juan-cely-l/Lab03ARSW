@@ -20,21 +20,17 @@ public class RedundancyFilter implements BlueprintFilter {
             return bp;
         }
 
-        // Primer punto siempre se agrega
         filteredPoints.add(points.get(0));
 
-        // Comparar cada punto con el anterior
         for (int i = 1; i < points.size(); i++) {
             Point current = points.get(i);
             Point previous = points.get(i - 1);
 
-            // Agregar solo si es diferente al anterior
             if (current.getX() != previous.getX() || current.getY() != previous.getY()) {
                 filteredPoints.add(current);
             }
         }
 
-        // Crear nuevo blueprint con los puntos filtrados
         Blueprint filteredBp = new Blueprint(bp.getAuthor(), bp.getName());
         for (Point p : filteredPoints) {
             filteredBp.addPoint(p);
